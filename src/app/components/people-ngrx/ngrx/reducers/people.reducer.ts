@@ -37,6 +37,11 @@ export const reducer = createReducer(
   on(PeopleActions.selectPerson, (state, { id }) => ({
     ...state,
     selectedPersonId: id,
+  })),
+
+  on(PeopleActions.deselectPerson, (state, { id }) => ({
+    ...state,
+    selectedPersonId: null,
   }))
 );
 
