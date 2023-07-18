@@ -16,3 +16,9 @@ export const selectPeopleIsLoading = createSelector(
   selectPeopleState,
   (state: fromPeople.State) => state.isLoading
 )
+
+// Add selector for selected person's id
+export const selectedPersonId = createSelector(
+  selectPeopleState,
+  (state: fromPeople.State) => state.selectedPersonId
+)

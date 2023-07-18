@@ -7,12 +7,14 @@ export const peopleFeatureKey = 'people';
 // TODO: Need to add People to the store and initialize it.
 export interface State {
   isLoading: boolean,
-  people: PersonModel[]
+  people: PersonModel[],
+  selectedPersonId: number,
 }
 
 export const initialState: State = {
   isLoading: false,
   people: [],
+  selectedPersonId: null,
 };
 
 
@@ -29,6 +31,12 @@ export const reducer = createReducer(
     ...state,
     people: people,
     isLoading: false,
+    selectedPersonId: null,
+  })),
+
+  on(PeopleActions.selectPerson, (state, { id }) => ({
+    ...state,
+    selectedPersonId: id,
   }))
 );
 

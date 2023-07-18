@@ -12,6 +12,10 @@ export const loadedPeople = createAction(
   props<{ people: PersonModel[] }>()
 )
 
-
+// An action for selecting an individual person
+export const selectPerson = createAction(
+  '[People] Select Person',
+  props<{ id: number }>()
+)
 
 
