@@ -1,5 +1,8 @@
 <div class="container px-0">
-    <div class="card p-2 p-md-3 mb-3">
+    <div 
+        class="card p-2 p-md-3 mb-3"
+        [ngClass]="{'border border-primary': isSelected}"
+    >
         <div 
             class="row align-items-center"
             *ngIf="!isSelected else editView"    
