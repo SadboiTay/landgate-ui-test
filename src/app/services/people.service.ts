@@ -10,17 +10,17 @@ export class PeopleService {
 
   constructor() { }
 
-  private mockPeopleList = [
-    {firstName: 'John', lastName: 'Doe', age: '21', workTitle: 'Wanna be Signer'},
-    {firstName: 'Jane', lastName: 'Doe', age: '22', workTitle: 'Signer'},
-    {firstName: 'Bob', lastName: 'Barker', age: '80', workTitle: 'TV Host'},
-    {firstName: 'John', lastName: 'Doe', age: '21', workTitle: 'Wanna be Signer'},
-  ];
+  private mockPeopleList: PersonModel[] = [
+    {firstName: 'John', lastName: 'Doe', age: 21, jobTitle: 'Wanna be Signer'},
+    {firstName: 'Jane', lastName: 'Doe', age: 22, jobTitle: 'Signer'},
+    {firstName: 'Bob', lastName: 'Barker', age: 80, jobTitle: 'TV Host'},
+    {firstName: 'John', lastName: 'Doe', age: 21, jobTitle: 'Wanna be Signer'},
+  ].map((person) => new PersonModel(person));
 
 
   getPeople(): Observable<PersonModel[]> {
     // TODO: Finish this implementation using the data from mockPeopleList
-    // of(true).pipe(delay(100))
-    return null;
+    of(true).pipe(delay(100))
+    return of(this.mockPeopleList);
   }
 }
