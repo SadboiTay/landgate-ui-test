@@ -11,17 +11,19 @@ import { HomeComponent } from './components/home/home.component';
 import {EffectsModule} from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { PeopleNgrxModule } from './components/people-ngrx/people-ngrx.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    PeopleNgrxModule,
     StoreModule.forRoot(reducers, {
       metaReducers
     }),
