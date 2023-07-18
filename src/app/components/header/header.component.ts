@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  path: string;
+  homePath: string = '/home';
+  peoplePath: string = '/people-ngrx';
 
-  constructor() { }
+  constructor(private location: Location) { 
+    this.location.onUrlChange((val) => {
+      this.path = val;
+    })
+  }
+
 
   ngOnInit() {
   }
