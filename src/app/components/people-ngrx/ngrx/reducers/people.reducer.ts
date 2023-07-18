@@ -39,8 +39,19 @@ export const reducer = createReducer(
     selectedPersonId: id,
   })),
 
-  on(PeopleActions.deselectPerson, (state, { id }) => ({
+  on(PeopleActions.deselectPerson, (state) => ({
     ...state,
+    selectedPersonId: null,
+  })),
+
+  on(PeopleActions.updatePerson, (state, { person }) => ({
+    ...state,
+    people: state.people.map(index => { 
+      if (index.id === state.selectedPersonId) {
+        index = person;
+      }
+      return index;
+    }),
     selectedPersonId: null,
   }))
 );

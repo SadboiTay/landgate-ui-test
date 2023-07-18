@@ -21,7 +21,9 @@ export const selectPerson = createAction(
 // An action for de-selecting an individual person (cancelling the edit)
 export const deselectPerson = createAction(
   '[People] Deselect Person',
-  props<{ id: number }>()
 )
 
-
+export const updatePerson = createAction(
+  '[People] Update Person',
+  props<{ person: PersonModel }>()
+)

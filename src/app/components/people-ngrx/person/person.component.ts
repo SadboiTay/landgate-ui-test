@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Action, Store } from '@ngrx/store';
 import { PersonModel } from 'src/app/models/person-model';
-import { deselectPerson, selectPerson } from '../ngrx/actions/people.actions';
+import { deselectPerson, selectPerson, updatePerson } from '../ngrx/actions/people.actions';
 import { selectedPersonId } from '../ngrx/selectors/people.selectors';
 import { Subscription } from 'rxjs/internal/Subscription';
 
@@ -43,8 +43,20 @@ export class PersonComponent implements OnInit, OnDestroy {
     this.store.dispatch(selectPerson({ id }))
   }
 
-  deselectPerson(id: number) {
-    this.store.dispatch(deselectPerson({ id }))
+  deselectPerson() {
+    this.store.dispatch(deselectPerson())
+  }
+
+  updatePerson(): void {
+    const updatePersonDto: PersonModel = {
+      id: this.person.id,
+      firstName: this.firstName,
+      lastName: this.lastName,
+      age: this.age,
+      jobTitle: this.jobTitle,
+    }
+
+    this.store.dispatch(updatePerson({ person: updatePersonDto }))
   }
 
   setFormValues(): void {
