@@ -19,7 +19,11 @@ export const initialState: State = {
 export const reducer = createReducer(
   initialState,
 
-  on(PeopleActions.loadPeoples, (state) => ({ ...state, isLoading: true })),
+  on(PeopleActions.loadPeoples, (state) => ({ 
+    ...state, 
+    people: [],
+    isLoading: true,
+  })),
 
   on(PeopleActions.loadedPeople, (state, { people }) => ({
     ...state,
