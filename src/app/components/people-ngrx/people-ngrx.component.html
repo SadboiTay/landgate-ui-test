@@ -1,7 +1,13 @@
-<p>People Component</p>
 <!-- TODO: Show all people on this screen
   TODO Implement a person-component that displays the details of a person.
 Add a way to select and then edit a individual person.  There should be options to save and cancel the edit.  Cancelling an edit will result in no changes being made to the selected person. -->
+
+<ng-container *ngIf="isLoading$ | async">
+  <div class="d-flex justify-content-center align-items-center" style="height: 300px">
+    <h2 class="mr-4">Finding People...</h2>
+    <div><i class="fa fa-circle-o-notch fa-spin" style="font-size:36px"></i></div>
+  </div>
+</ng-container>
 
 <div *ngFor="let person of people$ | async">
   <ul>

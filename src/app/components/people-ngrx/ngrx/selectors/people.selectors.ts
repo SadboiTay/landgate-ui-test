@@ -10,3 +10,9 @@ export const selectPeople = createSelector(
   selectPeopleState,
   (state: fromPeople.State) => state.people
 )
+
+// Added an additional selector to showcase loading state behavior
+export const selectPeopleIsLoading = createSelector(
+  selectPeopleState,
+  (state: fromPeople.State) => state.isLoading
+)

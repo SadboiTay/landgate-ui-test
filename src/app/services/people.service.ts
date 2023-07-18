@@ -18,9 +18,9 @@ export class PeopleService {
   ].map((person) => new PersonModel(person));
 
 
-  getPeople(): Observable<PersonModel[]> {
+  async getPeople(): Promise<PersonModel[]> {
     // TODO: Finish this implementation using the data from mockPeopleList
-    of(true).pipe(delay(100))
-    return of(this.mockPeopleList);
+    await of(true).pipe(delay(2000)).toPromise();
+    return of(this.mockPeopleList).toPromise();
   }
 }
