@@ -1,0 +1,36 @@
+footer {
+    background-image: url("/assets/images/footer-hills-2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+nav {
+    padding-top: 74px;
+    padding-bottom: 95px;
+    padding-left: 41px;
+    padding-right: 41px;
+    background-color: #212121;
+    opacity: .7;
+    color: #e5dfdb;
+    font-size: 14px;
+}
+
+h5 {
+    color: #d4c598;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+
+li a {
+    text-decoration: none;
+    color: #e5dfdb;
+}
