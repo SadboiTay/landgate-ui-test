@@ -9,7 +9,7 @@ export const loadPeoples = createAction(
 // This is a load success
 export const loadedPeople = createAction(
   '[People] Loaded',
-  (people: PersonModel[]) => ({people})
+  props<{ people: PersonModel[] }>()
 )
 
 
