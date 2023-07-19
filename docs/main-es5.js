@@ -621,6 +621,8 @@
           this.peoplePath = src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.production ? '/landgate-ui-test/people-ngrx' : '/people-ngrx';
           this.location.onUrlChange(function (val) {
             _this.path = val;
+            console.log('real path', _this.path);
+            console.log('path match', _this.homePath);
           });
         }
 

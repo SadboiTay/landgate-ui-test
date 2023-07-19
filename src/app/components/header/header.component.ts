@@ -15,6 +15,8 @@ export class HeaderComponent implements OnInit {
   constructor(private location: Location) { 
     this.location.onUrlChange((val) => {
       this.path = val;
+      console.log('real path', this.path)
+      console.log('path match', this.homePath)
     })
   }
 
