@@ -9,7 +9,7 @@ This test was an excellent experience diving into NGRX to deliver a global store
 
 ### Finished Test UI and Deployed Link:
 
-[Visit the finished site here](https://sadboitay.github.io/landgate-ui-test/home)
+[Visit the finished site here](https://sadboitay.github.io/landgate-ui-test/)
 
 ![Alt text](image-5.png)
 ![Alt text](image-2.png)
