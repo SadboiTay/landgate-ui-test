@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --output-path docs --base-href https://SadboiTay.github.io/landgate-ui-test/ && git add . && git commit -m 'build and deploy' && git push"
+    "build-prod": "ng build --output-path docs --base-href /landgate-ui-test/ --prod"
   },
   "private": true,
   "dependencies": {
