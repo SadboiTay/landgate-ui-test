@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   path: string;
-  homePath: string = '/home';
-  peoplePath: string = '/people-ngrx';
+  homePath: string = environment.production ? '/landgate-ui-test/home' : '/home';
+  peoplePath: string = environment.production ? '/landgate-ui-test/people-ngrx' : '/people-ngrx';
 
   constructor(private location: Location) { 
     this.location.onUrlChange((val) => {
