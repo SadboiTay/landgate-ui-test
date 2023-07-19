@@ -1,5 +1,34 @@
 # LandgateUiTest
 
+### Notes 
+
+This test was an excellent experience diving into NGRX to deliver a global store for managing application state. I've often longed for the advantages that NGRX provides while wading through countless Rxjs subjects, overlapping services, and far too many observable streams while working on Eve's enterprise applications. At the time, the cost to overhaul our codebase and implement NGRX couldn't be justified. It was easier for us to rush our products out the door with Rxjs subject state management, but if I could go back and go it again it would be NGRX all the way. Components having acccess to the global store and simply dispatching actions seems to remove so much unecessary movement of large streams of data around the app, as well as simultaneously restricts the amount of business logic these components need to perform. The immutable nature of the store feels so much more confidence inspiring than easily manipulatable observable streams. I once spent 4 hours debugging an observable that was being transformed way down the line after emitting its first value because I thought it was manipulating a deep copy. I also found the NGRX selectors to be a brilliant method of creating slices of data streams that are razor-specific to your component's data dependencies, regardless of having one (potentially massive) data store. Ultimately, the establishment of NGRX seems to require a little bit of extra time and attention, but where such is justified it can provide extremely powerful, consistent, and surprisingly simple state management. The Redux Chrome extension also makes debugging an absolute breeze.
+
+### Source Code UI:
+![Alt text](image-7.png)
+
+### Finished Test UI and Deployed Link:
+
+[Visit the finished site here](https://sadboitay.github.io/landgate-ui-test/home)
+
+![Alt text](image-5.png)
+![Alt text](image-2.png)
+![Alt text](image-3.png)
+![Alt text](image-4.png)
+### Summary
+
+The major criteria included making a repsonsive nav bar with a mobile/collapsable menu, adjusting the hero section text visbility, making a responsive 3 column footer, and then creating a route to the 'people' page and there displaying a mock array of people that can be edited and saved. For bonus points (and which I really enjoyed implementing) the use of NGRX as the 'people' state management mechanism, an additional creative home page section, and additional footer stylings. In total, I likely spent over 6 hours on the project becuase I was having too much fun to stop. If pressed, I could produce the same results again in 2 hours.
+
+### Approach
+
+Taking a mobile first approach led me to a simple MVP design for the 'people' cards that behaves consistently across all device sizes. Bootstrap was supplied in the source code, and although I have hundreds (thoudands?) of hours working with the PrimeNG component/theme library, I stuck with bootstrap just to keep things fresh and simple, and I had no regrets. For my bonus section and styles, I decided to spare myself the headache of designing while coding and draw inspiration straight from the source: [the LandGate company landing page](https://landgate.com/home) itself. Dissecting their live Angular application provided UI design criteria for myself to adhere to, while supplying the opportunity to include some light hearted humor.
+
+### Further Developement
+
+If I were building this site for an intended production audience (and if I didn't have some small bit of self control) there are many features and updates that I would pursue. Firstly, there seems to be a refresh bug on the github pages hosted site which produces a 404. I also couldn't quite get the carousel of quotes to display 2 or 3 items simultaneously on larger screens, like LandGate's production site does like breathing. Theirs looks way better. The rest of the updates would fall into the 'people' page. Here, I was tempted to add mock error handling and corresponding UI elements, use Angulars reactive forms to supply much needed validation to the 'person' editing input fields, and some smooth transition animations that would elevate the experience from the jarring expansion/contraction of selected 'people' in their edit vs static card states. To top it off, a success message after performing an edit and a confirmation mechanism for ensuring the user wants to cancel their edit would really bring the UX together well.
+
+## Test Criteria Provided by LandGate:
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.  Please follow the Angular Cli link on how to setup and install the required dependencies.  
 
 This test project is designed to help us understand your level of web development skills with Angular, NGRX, HTML, CSS, TypeScript, and Javascript. This project is not meant for you to take many hours to complete.  You are however free to spend as much time as you would like completing it. The suggested time to spend is between two and three hours.
